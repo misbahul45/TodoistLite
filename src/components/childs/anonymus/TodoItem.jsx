@@ -84,7 +84,7 @@ const TodoItem = ({todo, display, handleEditTodo }) => {
             <div className="absolute right-3 top-2 flex items-center gap-3">
                 <ButtonIcon onClick={handleEditTodo} Icon={CiEdit} action={'Edit Todo'} className={`relative group ${todo.isFinished?"hidden":"block"}`} iconClassName={'text-3xl'} actionClassName={'scale-0 absolute -left-8 -botoom-10 w-20 bg-slate-800 text-slate-100 py-1 rounded-md shadow-md shadow-slate-700 group-hover:scale-100 transition-all duration-200'} />
                 <div className="relative transition-all duration-300">
-                  <ButtonIcon onClick={()=>setOpenMore(!openMore)} Icon={CiCircleMore} action={'More'} className={'relative group'} iconClassName={'text-2xl'} actionClassName={'scale-0 absolute -left-3 -top-8 w-16 bg-slate-800 text-slate-100 py-1 rounded-md shadow-md shadow-slate-700 group-hover:scale-100 transition-all duration-200'} />
+                  <ButtonIcon onClick={()=>setOpenMore(!openMore)} Icon={CiCircleMore} action={'More'} className={'relative group'} iconClassName={'text-2xl'} actionClassName={'hidden sm:block scale-0 absolute -left-3 -top-8 w-16 bg-slate-800 text-slate-100 py-1 rounded-md shadow-md shadow-slate-700 group-hover:scale-100 transition-all duration-200'} />
                   <TodoMore todoId={todo.id} openMore={openMore} route={route} />  
                 </div>
             </div>
