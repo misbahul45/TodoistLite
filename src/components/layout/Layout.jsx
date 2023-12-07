@@ -69,7 +69,7 @@ const Layout = () => {
     <>
      <Header addOnClick={()=>setOpenForm(true)} />
      <main className={`flex w-full h-screen ${darkMode ?"dark":""} `}>
-         <div className={`lg:relative absolute left-0 top-0 z-20 h-full ${sideBar?"sm:w-[30%] xs:w-[50%] w-[60%] opacity-100 -z-10":"w-0 opacity-0"} transition-all drop-shadow-xl duration-500 ease-in-out`} >
+         <div className={`lg:relative absolute left-0 top-0 z-20 h-full ${sideBar?"sm:w-[30%] xs:w-[50%] w-[80%] opacity-100 -z-10":"w-0 opacity-0"} transition-all drop-shadow-xl duration-500 ease-in-out`} >
            <SideBar />
           </div>
          <div className={`w-full`}>
