@@ -30,6 +30,51 @@ function RouteApp() {
     },
     {
       element:<Layout />,
+      path:'/app/today',
+      children:<Today />
+    },
+    {
+      element:<Layout />,
+      path:'/app/inbox',
+      children:<Inbox />
+    },
+    {
+        element:<Layout />,
+        path:'/app/upcoming',
+        element:<Upcoming />
+    },
+    {
+      element:<Layout />,
+      path:'/app/filter',
+      element:<Filter />
+    },
+    {
+      element:<Layout />,
+      path:'/app/today/task/:id',
+      element:<ViewMoreTodo  route={'today'} />
+    },
+    {
+      element:<Layout />,
+      path:'/app/inbox/task/:id',
+      element:<ViewMoreTodo  route={'inbox'} />
+    },
+    {
+      element:<Layout />,
+      path:'/app/upcoming/task/:id',
+      element:<ViewMoreTodo  route={'upcoming'} />
+    },
+    {
+      element:<Layout />,
+      path:'/app/filter/task/:id',
+      element:<ViewMoreTodo  route={'filter'} />
+    },
+    {
+      element:<Layout />,
+      path:'/app/project/:id',
+      element:<NoteProject />
+    },
+    {
+      element:<Layout />,
       children:[
         {
           path:'/app/today',
