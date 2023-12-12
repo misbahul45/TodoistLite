@@ -73,47 +73,7 @@ function RouteApp() {
       path:'/app/project/:id',
       element:<NoteProject />
     },
-    {
-      element:<Layout />,
-      children:[
-        {
-          path:'/app/today',
-          element:<Today />,
-        },
-        {
-          path:'/app/inbox',
-          element:<Inbox />
-        },
-        {
-          path:'/app/upcoming',
-          element:<Upcoming />
-        },
-        {
-          path:'/app/filter',
-          element:<Filter />
-        },
-        {
-          path:'/app/today/task/:id',
-          element:<ViewMoreTodo  route={'today'} />
-        },
-        {
-          path:'/app/inbox/task/:id',
-          element:<ViewMoreTodo  route={'inbox'} />
-        },
-        {
-          path:'/app/upcoming/task/:id',
-          element:<ViewMoreTodo  route={'upcoming'} />
-        },
-        {
-          path:'/app/filter/task/:id',
-          element:<ViewMoreTodo  route={'filter'} />
-        },
-        {
-          path:'/app/project/:id',
-          element:<NoteProject />
-        }
-      ]
-    }
+
   ])
  
   const getdataFromStore=async(idStore)=>{
