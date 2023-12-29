@@ -39,7 +39,7 @@ const ToolForm = ({ rule, day, setDay, Priority, setPriority, time, setTime }) =
     }else if(rule==="priority"){
         content=(
             <div className="relative">
-                <ButtonIcon onClick={handleShowPriority} type="button" Icon={Priority==='Priority'?CiFlag1:FaFlag} action={Priority} actionClassName={`text-sm text-slate-600 group-hover:text-slate-950`} iconClassName={`text-xl ${Priority==="Priority"|| Priority==="Priority-1"?"text-red-600":Priority==="Priority-2"?"text-orange-600":"text-yellow-600"}`} className={'flex border-[1px] border-slate-400 items-center gap-2 px-2 py-1  rounded-md hover:scale-110 hover:border-slate-700 transition-all duration-300 group'} />
+                <ButtonIcon onClick={handleShowPriority} type="button" Icon={Priority==='Priority'?CiFlag1:FaFlag} action={Priority} actionClassName={`text-xs text-slate-600 group-hover:text-slate-950`} iconClassName={`text-xl ${Priority==="Priority"|| Priority==="Priority-1"?"text-red-600":Priority==="Priority-2"?"text-orange-600":"text-yellow-600"}`} className={'flex border-[1px] border-slate-400 items-center gap-2 px-2 py-1  rounded-md hover:scale-110 hover:border-slate-700 transition-all duration-300 group'} />
                 <Element openElement={showPriority} setOpenElement={setShowPriority} stateOption={Priority} setSetateOption={setPriority} Icon1={FaFlag} Icon2={FaFlag} Icon3={FaFlag} info1={'Priority-1'} info2={'Priority-2'} info3={'Priority-3'} />
             </div>
         )
