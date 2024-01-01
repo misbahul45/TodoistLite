@@ -12,6 +12,7 @@ import { getDarkMode_action, getSideBar_action } from '../../app/slice/allSlice'
 import { db, firebaseAuth,  } from '../../config/firebase'
 import { doc, setDoc } from 'firebase/firestore'
 import { nanoid } from '@reduxjs/toolkit'
+import { onAuthStateChanged } from 'firebase/auth'
 const Layout = () => {
    const sideBar=useSelector(getSideBar_action)
    const darkMode=useSelector(getDarkMode_action)
@@ -32,6 +33,17 @@ const Layout = () => {
       navigate('/app/today');
     }
   }, [navigate]);
+
+  useEffect(()=>{
+    const unsubscribe = onAuthStateChanged(firebaseAuth, (user) => {
+      if (user) {
+        navigate('/app/today');
+      }else{
+        navigate('/')
+      }
+    });
+    return () => unsubscribe();
+  },[navigate])
 
   const handleAddTodo=async()=>{
     try{
