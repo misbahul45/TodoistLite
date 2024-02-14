@@ -40,7 +40,7 @@ const NoteProject = () => {
         description: describe.split("\n"),
         title: title,
       };
-      await setDoc(db,id,updateNote);
+      await updateFirestoreDocument(id, updateNote);
       dispatch(saveNoteItem({ id, noteItem: updateNote }));
       setSave(true);
     } catch (error) {
@@ -54,7 +54,7 @@ const NoteProject = () => {
 
   const updateFirestoreDocument = async (documentId, data) => {
     const documentRef = doc(db, "project", documentId);
-    await updateDoc(documentRef, data);
+    await setDoc(documentRef, data);
   };
 
   return (
