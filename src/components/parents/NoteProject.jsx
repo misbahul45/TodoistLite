@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import { getDarkMode_action } from '../../app/slice/allSlice';
 import { getOneNotes, saveNoteItem } from '../../app/slice/noteSlice';
 import ButtonIcon from '../childs/anonymus/ButtonIcon';
-import { doc, setDoc, updateDoc } from 'firebase/firestore';
+import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 
 const NoteProject = () => {
