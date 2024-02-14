@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import { getDarkMode_action } from '../../app/slice/allSlice';
 import { getOneNotes, saveNoteItem } from '../../app/slice/noteSlice';
 import ButtonIcon from '../childs/anonymus/ButtonIcon';
-import { doc, updateDoc } from 'firebase/firestore';
+import { doc, setDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 
 const NoteProject = () => {
@@ -40,7 +40,7 @@ const NoteProject = () => {
         description: describe.split("\n"),
         title: title,
       };
-      await updateFirestoreDocument(id, updateNote);
+      await setDoc(db,id,updateNote);
       dispatch(saveNoteItem({ id, noteItem: updateNote }));
       setSave(true);
     } catch (error) {
